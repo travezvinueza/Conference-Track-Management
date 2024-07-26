@@ -15,7 +15,6 @@ but you're having trouble fitting them into the time constraints of the day -- t
 > Los presentadores serán muy puntuales; no debe haber intervalos entre las sesiones.
 
 
-<<<<<<< HEAD
 [!TIP]
 El diagrama de la solución se encuentra en la ruta raiz.
 Para probar los endpoints direccionar a la carpeta util en la raiz ejeuctar con postman.
@@ -25,7 +24,6 @@ El puerto en el cual esta escuchando es el 8080.
 El proyecto tiene Swagger para la documentacion y el test de pruebas funcionales,
 para ingresar se debe redirigirse a la siguiente ruta:
 http://localhost:8080/api/swagger-ui/index.html#/
-=======
 
 [!TIP]
 El diagrama de la solución se encuentra en la ruta raíz.
