@@ -28,11 +28,9 @@ http://localhost:8080/api/swagger-ui/index.html#/
 [!TIP]
 El diagrama de la solución se encuentra en la ruta raíz.
 
-Para probar los endpoints, dirigirse a la carpeta util en la raíz y ejecutar con Postman.
-
 El contextPath de la aplicación está configurado con el valor /api.
 
-En la raíz se encuentra el archivo endpoints_collection.postman_collection.json para ejecutarlo con Postman.
+En la raíz se encuentra el archivo postman_collection.json para ejecutarlo con Postman.
 
 El puerto en el cual está escuchando es el 8080.
 
