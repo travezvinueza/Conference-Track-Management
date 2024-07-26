@@ -16,6 +16,7 @@ but you're having trouble fitting them into the time constraints of the day -- t
 
 
 > [!TIP]
+
 El diagrama de la solución se encuentra en la ruta raiz.
 Para probar los endpoints direccionar a la carpeta util en la raiz ejeuctar con postman
 > El contextPath de la app esta configurado con el valor /api.
