@@ -10,10 +10,9 @@ import java.util.List;
 
 @Service
 public class SchedulerService {
-    private static final int MORNING_SESSION_END = 720; // 12:00 PM in minutes
-    private static final int AFTERNOON_SESSION_START = 780; // 1:00 PM in minutes
-    private static final int NETWORKING_EVENT_START = 960; // 4:00 PM in minutes
-    private static final int NETWORKING_EVENT_END = 1020; // 5:00 PM en minutos
+    private static final int MORNING_SESSION_END = 720; // 720 minutos equivalen a 12 horas
+    private static final int AFTERNOON_SESSION_START = 780; // 780 minutos equivalen a 13 horas
+    private static final int NETWORKING_EVENT_START = 960; // 960 minutos equivalen a 16 horas.
 
     public List<Track> scheduleConference(List<Talk> talks) {
         List<Track> tracks = new ArrayList<>();
@@ -48,6 +47,7 @@ public class SchedulerService {
         return tracks;
     }
 
+    //Este método organiza charlas dentro de una sesión específica (mañana o tarde).
     private List<Talk> scheduleSession(List<SessionItem> session, List<Talk> talks, int sessionStartTime, int sessionEndTime) {
         int currentTime = sessionStartTime;
         List<Talk> remainingTalks = new ArrayList<>();
@@ -65,15 +65,16 @@ public class SchedulerService {
             }
         }
 
-        return remainingTalks;
+        return remainingTalks; //Retorna Lista de charlas restantes que no pudieron ser programadas
     }
 
+    //Este método convierte una hora en minutos a una cadena legible con formato AM/PM.
     private String formatTime(int timeInMinutes) {
         int hours = timeInMinutes / 60;
         int minutes = timeInMinutes % 60;
         String period = (hours < 12 || hours == 24) ? "AM" : "PM";
         if (hours > 12) hours -= 12;
         if (hours == 0) hours = 12; // 12 AM or 12 PM
-        return String.format("%02d:%02d %s", hours, minutes, period);
+        return String.format("%02d:%02d %s", hours, minutes, period); //Retorna la cadena formateada.
     }
 }
