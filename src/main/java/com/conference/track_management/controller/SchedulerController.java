@@ -2,7 +2,7 @@ package com.conference.track_management.controller;
 
 import com.conference.track_management.model.Talk;
 import com.conference.track_management.model.Track;
-import com.conference.track_management.service.impl.SchedulerServiceImpl;
+import com.conference.track_management.service.SchedulerService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,11 +16,11 @@ import java.util.List;
 @RequestMapping("/my-scheduler")
 @RequiredArgsConstructor
 public class SchedulerController {
-    private final SchedulerServiceImpl schedulerServiceImpl;
+    private final SchedulerService schedulerService;
 
     @PostMapping("/create")
     public ResponseEntity<List<Track>> scheduleTalks(@RequestBody List<Talk> talks) {
-        List<Track> tracks = schedulerServiceImpl.scheduleConference(talks);
+        List<Track> tracks = schedulerService.scheduleConference(talks);
         return ResponseEntity.ok(tracks);
     }
 }
